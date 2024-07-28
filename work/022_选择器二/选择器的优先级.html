@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器的优先级</title>
+
+    <style>
+        /*全局选择器 优先级最低 一般用于全局初始化样式  通配符*/
+        * {
+            color: red;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        /* 单独h3标签 优先级高于全局选择 */
+        /* 标签选择器 选择的是页面所有这种类型标签*/
+        /* 所以只能描述共性，不能描述某一个元素的个性*/
+
+        h4 {
+            color: green;
+            font-size: 40px;
+        }
+
+        /* 类选择器 优先级高于标签选择器 */
+        .classOne {
+            color: blue;
+            font-size: 50px;
+        }
+
+        /* id选择器 优先级高于类选择器 */
+        #oneId {
+            color: yellow;
+            font-size: 60px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<h3>全局选择器 优先级最低</h3>
+
+<h4>元素选择器：标签名称 优先级1</h4>
+
+<p class="classOne">类选择器: .(class名) 优先级10</p>
+
+<h3 id="oneId">id选择器 优先级100 </h3>
+
+<p style="color: gold;font-size: 50px">内联样式的优先级为1000最高</p>
+
+</body>
+</html>

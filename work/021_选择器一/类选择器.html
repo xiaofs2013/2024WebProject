@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类选择器</title>
+
+    <style>
+        /*  类选择器，使用频率非常高，通过一个圆点来进行定义 针对你想要的所有标签使用   */
+        /*  优点 ： 灵活  */
+        /*    使用率： 最最高  */
+
+        .oneClass {
+            color: red;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .twoClass {
+            color: green;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .threeClass {
+            color: blue;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /*当同一个标签有多个类 如果CSS中的属性样式相同*/
+        /*则最后一个类会生效 他设置的CSS属性会覆盖掉前一个相同的类*/
+        .fourClass {
+            color: gold;
+            font-size: 50px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<p class="oneClass">大家好！</p>
+<p class="twoClass">我很好！</p>
+<p class="threeClass">我emo！</p>
+
+<!-- 类选择器可以给一个标签添加，也可以给多个标签添加 -->
+<!--同class数量没有限制-->
+<p class="threeClass">我哭哭！</p>
+
+<!-- 同一个标签使用多个类 多个类之间用空格隔开 -->
+<p class="twoClass fourClass">多个选择器</p>
+
+</body>
+</html>

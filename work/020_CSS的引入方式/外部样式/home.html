@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外部样式home</title>
+    <!--  link标签引用CSS文件，rel的stylesheet为固定属性不用变   -->
+    <!--  href 引入 路径  -->
+    <link rel="stylesheet" href="public.css">
+    <!--  该meta标签代表不要缓存该页面   -->
+    <!--   主要解决浏览器返回键回到首页导致A标签文本居中失效的问题  -->
+    <!--  一般不推荐使用，推荐使用js逻辑来强制刷新主页  -->
+<!--    window.onpageshow = function(event) {-->
+<!--    if (event.persisted) {-->
+<!--    window.location.reload();-->
+<!--    }-->
+<!--    };-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+</head>
+<body>
+
+<!--使用外部样式-->
+<!--独立的创建一个专门用于写样式的文件-->
+
+<p>首页</p>
+<a href="./product.html">产品</a>
+
+</body>
+</html>

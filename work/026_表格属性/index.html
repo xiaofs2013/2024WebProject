@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>026_表格属性</title>
+
+    <style>
+
+        table {
+        /*    添加边框*/
+        /*    1px代表： 边框的大小 solid：边框线的样式（实线） black是线的颜色*/
+            border: 3px solid green;
+            /* 折叠表格边框，使相邻单元格的边框合并为一个边框 */
+            border-collapse: collapse;
+            /*width: 500px;*/
+            /*height: 300px;*/
+
+        }
+
+        td {
+            /* 设置单元格的边框，3px大小，实线，绿色 */
+            border: 3px solid green;
+
+            /* 设置单元格内容水平居中 */
+            text-align: center;
+
+            /* 设置单元格内容垂直居中 */
+            vertical-align: center;
+
+            /* 设置单元格的内边距为50px  有了padding可以不用设置表格的宽高 */
+            padding: 50px;
+
+        /*    背景颜色*/
+            background-color: antiquewhite;
+
+            /*字体颜色*/
+            color: green;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<!--单纯通过标签 表格会不太好看-->
+<!--通过CSS来让这个表格变得优雅一些-->
+
+<table>
+    <tr>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+    </tr>
+    <tr>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+    </tr>
+    <tr>
+        <td>单元格</td>
+        <td>单元格</td>
+        <td>单元格</td>
+    </tr>
+</table>
+
+
+</body>
+</html>

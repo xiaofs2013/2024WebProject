@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合并选择器</title>
+
+    <style>
+
+        /* 共享样式 多个标签逗号隔开 共同享受CSS的配置效果 */
+        p,h3 {
+            color: red;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /*针对于Class的共享标签也是一样 逗号分开*/
+        /* 最后一个CSS覆盖 */
+        .oneClass,.twoClass{
+            color: green;
+            font-size: 40px;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<p class="oneClass">我是P标签</p>
+<h3 class="twoClass">我是标题标签</h3>
+
+</body>
+</html>

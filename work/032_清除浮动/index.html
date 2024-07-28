@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .con{
+            width: 500px;
+            /* 没有高度 就会变成内容所撑开的高度，但一但内容浮动，高度就瞬间为0 造成父类消失 */
+            background-color: #888888;
+            /*overflow: hidden; !*父级元素限定使用overflow*!*/
+            /*clear: both;  !*和overflow要同时使用 子类可以用clear*!*/
+        }
+
+        .con::after{  /*伪对象方式清除浮动 效果一样*/
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* 如果受影响的元素在父类外面 对父类清除浮动 */
+        /* 如果在父类里面 则单独设置clear清除浮动 */
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 5px; /*外边距*/
+            float: left;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            /*clear: both; !*清除浮动*!*/
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            clear: both; /*清除浮动*/
+        }
+    </style>
+
+</head>
+<body>
+
+<!--浮动并不是随便使用-->
+<!--浮动的元素会脱离文档流，会影响其他元素的布局-->
+<!--浮动的元素会影响父元素的高度，照成高度塌陷，后续元素也都会受到影响-->
+
+<div class="con">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box2"></div>
+</div>
+
+<!-- 后续元素也受到了浮动的影响 摆放强行靠前-->
+<!-- 设置clear属性 清除浮动-->
+<div class="box1"></div>
+
+</body>
+</html>

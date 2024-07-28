@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>029_弹性盒子模型</title>
+
+    <style>
+        .con {
+            width: 500px;
+            height: 500px;
+            background-color: #555;
+            display: flex; /* 设置为弹性盒子 默认弹性盒子里面的内容是横向摆放 */
+            flex-direction: row; /* 设置弹性盒子的方向 默认是row column是垂直摆放 */
+            justify-content: center; /* 设置弹性盒子内子元素在主轴（横轴）上的对齐方式为居中 */
+            align-items: center; /* 设置弹性盒子内子元素在交叉轴（纵轴）上的对齐方式为居中 */
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            flex: 2;  /* 设置弹性盒子内子元素的占比（权重 自适应） 设置完毕后宽高会失效 */
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            flex: 2;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            flex: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--弹性盒子模型 是CSS3的一种新布局方式 使用很广泛-->
+<!--移动端使用特别多-->
+
+<div class="con">
+
+    <div class="box1"></div>
+
+    <div class="box2"></div>
+
+    <div class="box3"></div>
+
+</div>
+
+
+</body>
+</html>
