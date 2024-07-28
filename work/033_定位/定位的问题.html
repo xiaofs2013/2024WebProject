@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .con {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative; /* 一般父级元素添加定位的方式是相对定位 */
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            position: absolute;   /* 绝对定位 */
+            left: 50px;
+            top: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--如果父级元素有定位 那么父级元素移动 子类元素就算有绝对定位也会跟着移动-->
+<!--如果父级元素没有定位 那么子集元素会随着文档流来移动 不会跟着父级元素移动-->
+
+<div class="con">
+    <div class="box1"></div>
+</div>
+
+</body>
+</html>

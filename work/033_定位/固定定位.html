@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: fixed; /* 固定定位 */
+            right: 100px;
+            bottom: 100px;
+        }
+
+        .box2 {
+            width: 400px;
+            height: 400px;
+            background-color: gold;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        h3 {
+            height: 500px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--固定定位也会脱离文档流 也会压盖其他的标准流元素-->
+<!--固定定位的使用场景很有限 一般只会用到一个位置-->
+<!--固定定位的元素会随着页面的滚动 固定在一个位置 不会被滚动影响-->
+<div class="box1">我不会被滚动影响</div>
+
+<div class="box2"><p>标准流标准流标准流标准流标准流标准流标准流</p></div>
+
+<div class="box3"><p>绝对定位</p></div>
+
+<h3>哈哈
+</h3>
+
+</body>
+</html>

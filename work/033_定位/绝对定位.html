@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .box1 {
+
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute; /* 绝对定位 脱离了文档流 */
+            left: 100px;
+            top: 200px;
+
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            position: absolute; /* 绝对定位 脱离了文档流 */
+            left: 50px;
+            top: 200px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="box1"></div>
+<!--box2会被box1压盖 因为box1脱离了文档流-->
+<div class="box2"></div>
+<!--box3会压盖1和2 因为绝对定位不会避开其他的元素 会直接压盖-->
+<div class="box3"></div>
+
+</body>
+</html>
