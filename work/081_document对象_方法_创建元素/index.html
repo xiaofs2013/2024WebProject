@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="nav">导航</div>
+
+<div id="con"></div>
+
+
+<script>
+
+    // 创建元素
+    let p = document.createElement("p");
+    console.log(p)
+    // 创建文本
+    let text = document.createTextNode("这是一个文本");
+    console.log(text);
+    // 创建属性
+    let id = document.createAttribute("id");
+    id.value = "id1";
+    console.log(id);
+
+    //创建文本信息 appendChild 将内容或者子元素放入容器中
+    //将text插入p标签
+    p.appendChild(text);
+    console.log(p);
+    //将id赋值给p标签
+    p.setAttributeNode(id);
+    console.log(p);
+
+    //获得父类容器
+    let con = document.getElementById("con");
+    con.appendChild(p);
+
+</script>
+
+</body>
+</html>

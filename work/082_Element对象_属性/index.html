@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+        }
+
+        .box1 {
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="box" id="root">hello</div>
+
+
+<script>
+
+    var root = document.getElementById("root");
+    //改变id
+    root.id = "rootId";
+    console.log(root.id);
+    console.log(root);
+
+    //改变class
+    root.className = "box box1";
+
+    root.classList.add("box2");
+    console.log(root);
+
+
+    //如果有就删除，没有就添加
+    root.classList.toggle("box2");
+
+    //innerHtml和innerText的区别
+    // innerHtml会解析标签
+    // innerText不会解析标签
+    // innerText会将标签转换为字符串
+
+    var str = "<a href='http://www.baidu.com'>百度</a>";
+    root.innerHTML = str;
+    console.log(root.innerHTML);
+    console.log(root.innerText);
+
+    //实际使用场景：动态改变class或ID 在某些操作后，需要改变样式 例如：点击按钮后改变样式
+    // var btn = document.getElementById("btn");
+    // btn.onclick = function () {
+    //     root.className = "box1";
+    // }
+
+</script>
+
+</body>
+</html>

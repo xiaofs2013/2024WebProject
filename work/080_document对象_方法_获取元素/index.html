@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div>hello1</div>
+<div>hello2</div>
+<div>hello3</div>
+
+
+<p class="p1"></p>
+
+
+<p id="pid1"></p>
+
+<p class="nav">nav1</p>
+<p class="nav">nav2</p>
+
+
+<script>
+    //根据标签名获取里面的值
+    let divValue = document.getElementsByTagName("div")[0].innerHTML;
+    console.log(divValue);
+    //将divValue重新赋值为helloWorld
+    divValue.innerHTML = "helloWorld"; //给基元的赋值将会丢失
+    //这种不会丢失
+    document.getElementsByTagName("div")[0].innerHTML = "helloWorld";
+    //或
+    var divValue2 = document.getElementsByTagName("div")[1];
+    divValue2.innerHTML = "helloWorld2";
+
+    //根据类名获取里面的值
+    document.getElementsByClassName("p1")[0].innerHTML = "根据class来赋值";
+
+    //id是唯一的不能重复 所以不是数组
+    document.getElementById("pid1").innerHTML = "根据ID来赋值";
+
+
+    //h5之后增加的新功能
+    //querySelector 只会返回第一个元素
+    let nv1 = document.querySelector(".nav").innerHTML = "nav1";
+    console.log(nv1);
+
+    //获取所有的nodeList
+    let navs = document.querySelectorAll(".nav");
+    console.log(navs);
+
+</script>
+
+</body>
+</html>
