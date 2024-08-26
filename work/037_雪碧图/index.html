@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"
+          ,maximum-scale=1,minimum-scale=1,user-scalable=no>
+
+    <style>
+        .icon1 {
+            width: 45px;
+            height: 40px;
+            display: block; /*行内元素转换为块级元素*/
+            background-image: url("[}S[QNFHRJA{RL$SY21_CJB.png");
+            border: 1px solid red; /*边框*/
+            /* F12 查看背景图片的位置 然后找到该属性用鼠标滚轮微调 */
+            background-position: -5px -18px; /*背景图片的位置*/
+        }
+
+        .icon2 {
+
+            /* 增加和第一个元素的高度间距 */
+            margin-top: 20px;
+            width: 45px;
+            height: 40px;
+            display: block; /*行内元素转换为块级元素*/
+            background-image: url("[}S[QNFHRJA{RL$SY21_CJB.png");
+            border: 1px solid red; /*边框*/
+            /* F12 查看背景图片的位置 然后找到该属性用鼠标滚轮微调 */
+            background-position: -235px -76px; /*背景图片的位置*/
+        }
+    </style>
+
+</head>
+<body>
+
+<!--可以将所有的图片放到一个图片里面，一次网络请求获取所有图片-->
+<!--减少图片的字节，减少了网络请求的次数，对性能是提升的-->
+
+<span class="icon1"></span>
+<span class="icon2"></span>
+
+
+</body>
+</html>

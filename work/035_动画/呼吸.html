@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .box1 {
+            width: 500px;
+            height: 500px;
+            margin: 40px auto; /*居中*/
+            background-color: gold;
+            border-radius: 50%; /*圆角*/
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .3); /*阴影 0 1px 2px 分别代表：水平偏移 垂直偏移 模糊半径 阴影尺寸 阴影颜色*/
+            /* `animation` 是一个 CSS 属性，用于定义动画效果。它的参数依次代表：
+
+                1. **动画名称**（`breathe`）：指定要应用的 `@keyframes` 动画名称。
+                2. **动画时间**（`3s`）：动画从开始到结束的持续时间，这里是 3 秒。
+                3. **动画速度**（`ease-in-out`）：动画的速度曲线，`ease-in-out` 表示动画以慢速开始和结束，中间加速。
+                4. **动画次数**（`infinite`）：动画的播放次数，`infinite` 表示无限次播放。
+                5. **动画方向**（`alternate`）：动画的播放方向，`alternate` 表示动画在每次循环时反向播放。
+                */
+            animation: breathe 1s ease-in-out infinite alternate;
+        }
+
+
+        @keyframes breathe {
+            0% {
+                opacity: 0.2; /*透明度*/
+                /* `box-shadow` 是一个 CSS 属性，用于在元素的框上添加阴影效果。它的参数依次代表：
+
+                1. **水平偏移**（`0`）：阴影相对于元素的水平偏移量。正值表示向右偏移，负值表示向左偏移。
+                2. **垂直偏移**（`1px`）：阴影相对于元素的垂直偏移量。正值表示向下偏移，负值表示向上偏移。
+                3. **模糊半径**（`2px`）：阴影的模糊程度。值越大，阴影越模糊，值为 `0` 时阴影是锐利的。
+                4. **阴影颜色**（`rgba(255, 255, 255, 0.1)`）：阴影的颜色，使用 `rgba` 表示法，其中 `255, 255, 255` 代表白色，
+                   `0.1` 代表透明度（范围从 `0` 到 `1`，`0` 为完全透明，`1` 为完全不透明）。
+                */
+                box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                opacity: 0.5;
+                box-shadow: 0 1px 2px rgba(18, 190, 84, 0.76);
+            }
+            100% {
+                opacity: 1;
+                box-shadow: 0 1px 2px rgba(59, 255, 255, 1);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="box1"></div>
+
+</body>
+</html>

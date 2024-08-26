@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 使设备的宽度作为视图宽度并禁止初始的缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"
+          ,maximum-scale=1,minimum-scale=1,user-scalable=no>
+
+    <style>
+
+        .box1 {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* 最大宽度 768 手机 */
+        @media screen and (max-width: 768px) {
+
+            .box1 {
+                background-color: blue;
+            }
+
+            .p1 {
+                display: none;
+            }
+
+            .p2 {
+                display: none;
+            }
+
+        }
+
+        /* 最小宽度 768 最大宽度为996 平板 */
+        @media screen and (min-width: 768px) and (max-width: 996px) {
+
+            .box1 {
+                background-color: green;
+            }
+
+            .p1 {
+                display: block;
+            }
+
+            .p2 {
+                display: block;
+            }
+
+        }
+
+        /* 最小宽度 996 电脑 */
+        @media screen and (min-width: 996px) {
+
+            .box1 {
+                background-color: red;
+            }
+
+            .p1 {
+                display: block;
+            }
+
+            .p2 {
+                display: block;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--媒体查询 ： 响应式设计-->
+<!--会根据设备的大小来自动识别加载不同的样式-->
+<!--自适应-->
+<!--bootstrap的自适应原理就来自媒体查询-->
+
+<div class="box1">
+
+</div>
+
+<p class="p1">哈哈哈</p>
+<p class="p2">嘻嘻嘻</p>
+
+</body>
+</html>
