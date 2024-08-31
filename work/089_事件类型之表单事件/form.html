@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form action="http://localhost:8080/login" id="myForm" onsubmit="submitHandle()">
+    <input id="userName" name="userName" placeholder="用户名">
+    <button id="b1" type="button">重置</button>  <!--type需要设置为button 不然也会触发表单的提交-->
+    <button type="submit">提交</button>
+</form>
+
+
+<script>
+
+    var restBtn = document.getElementById("b1");
+    let myForm = document.getElementById("myForm");
+    restBtn.onclick = function () {
+        myForm.reset(); // 重置表单 清除表单中的数据
+    }
+
+    function submitHandle() {
+        alert("提交表单");
+    }
+
+
+</script>
+
+</body>
+</html>

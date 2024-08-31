@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var timer = setTimeout(function () {
+        console.log('setTimeout');
+    }, 3000);
+
+    //清除定时器
+    clearTimeout(timer);
+
+
+
+    var user = {
+        name: "zhangsan",
+        getName: function () {
+            //this永远指向当前调用者 打印为zhangsan
+            console.log(this.name);
+
+            setTimeout(function () {
+                //定时器中的this指向全局环境（window） 也就是lisi
+                console.log(this.name);
+            }, 1000);
+
+        }
+    }
+    var name = "lisi";
+
+    user.getName();
+
+</script>
+
+</body>
+</html>

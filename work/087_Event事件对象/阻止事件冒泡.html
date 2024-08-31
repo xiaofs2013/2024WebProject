@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .root {
+            width: 200px;
+            height: 200px;
+            background-color: #999;
+        }
+
+        .b1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="root" id="root">
+    <div class="b1" id="b1"></div>
+</div>
+
+<script>
+
+    var root = document.getElementById("root");
+    var b1 = document.getElementById("b1");
+
+
+    root.onclick = function (e) {
+        console.log("root");
+    };
+
+    b1.onclick = function (e) {
+        console.log("b1");
+        //如果不添加阻止冒泡，那么点击b1方块的时候，会冒泡到root方块，所以会打印两次
+        //分别打印 b1 和 root
+        e.stopPropagation(); //阻止冒泡
+        //添加e.stopPropagation()之后，点击b1方块的时候，只会打印b1
+    }
+
+</script>
+
+</body>
+</html>

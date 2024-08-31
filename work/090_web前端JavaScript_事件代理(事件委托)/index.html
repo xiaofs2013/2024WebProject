@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<ul id="list">
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+    <p>P标签</p>
+</ul>
+
+<script>
+    var list = document.getElementById("list");
+    // list.onclick = function () {
+    //     alert("点击了子元素也触发了父元素的事件");
+    // }
+
+    //事件代理： 事件委托 事件代理是利用事件冒泡的原理，将事件加到父级元素上，触发执行效果
+    //由于事件冒泡的原理，不管点击的是li标签还是p标签，都会触发ul的点击事件
+    //因此可以把子节点的监听函数定义在父节点上，由父节点统一处理多个子节点的事件
+
+    //给ul添加点击事件 但是点击的是li标签
+    list.addEventListener("click", function (event) {
+
+        //通过获取点击的元素的标签名来判断是否是li标签
+        if (event.target.tagName) {
+            if (event.target.tagName.toLowerCase() === "li") {
+                //获取了点击的li标签的内容
+                alert(event.target.innerHTML);
+            }
+        }
+
+    }, false);
+
+</script>
+
+</body>
+</html>

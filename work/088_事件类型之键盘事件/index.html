@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<input type="text" id="userName">
+<input type="text" id="passWord">
+
+
+<script>
+
+    //键盘事件由用户敲击键盘触发 主要有三个事件
+    // 1. keydown 键盘按下事件
+    // 2. keyup 键盘抬起事件
+    // 3. keypress 键盘按下事件（按下有值的建触发,ctrl、alt、meta这类型的建不会触发）
+    // 对于keypress有值的建，按下会先触发keydown，然后触发keypress，最后触发keyup
+
+
+    var userName = document.getElementById("userName");
+    //在所有的事件前面加上on
+    userName.onkeydown = function (e) {
+        console.log("键盘按下事件");
+    };
+
+    //键盘抬起时打印值
+    userName.onkeyup = function (e) {
+        console.log(e.target.value);//获取输入框的值
+
+    };
+
+    userName.onkeypress = function (e) {
+        console.log("keypress");
+    };
+
+
+    var passWord = document.getElementById("passWord");
+    passWord.onkeyup = function (e) {
+        //keyCode：代表每个按键的唯一标识
+        // 13代表回车键
+        if (e.keyCode === 13) {
+            console.log("开始搜索");
+        }
+    };
+
+</script>
+
+
+</body>
+</html>

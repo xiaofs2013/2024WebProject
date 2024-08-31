@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btn">按钮</button>
+
+
+<script>
+
+    var btn = document.getElementById("btn");
+
+    //DOM2级事件处理程序 优点：可以绑定多个事件处理函数 不会覆盖之前的事件处理函数
+    btn.addEventListener("click", function () {
+        alert("点击了按钮");
+    });
+
+
+    btn.addEventListener("click", function () {
+        alert("点击了按钮（第二个）");
+    });
+
+</script>
+
+</body>
+</html>

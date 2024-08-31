@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="box1">
+    <button id="btn">按钮</button>
+</div>
+
+<script>
+
+
+    //DOM0级事件 优点：HTML和JS代码分离 缺点：事件处理函数只能绑定一个 无法添加多个事件
+    var btn1 = document.getElementById("btn");
+    btn1.onclick = function () {
+        alert("点击了按钮");
+    };
+    //第二个相同的事件处理函数会覆盖第一个
+    btn1.onclick = function () {
+        alert("点击了按钮（覆盖）");
+    };
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。
+    // setInterval() 方法会按间隔时间（以毫秒计）来调用函数或计算表达式。
+    // setTimeout() 方法只执行代码一次，而 setInterval() 方法会按照指定的时间间隔重复执行代码。
+
+    var num = 1;
+    var timer = setInterval(function () {
+        console.log(num++);
+    }, 1000);
+</script>
+
+</body>
+</html>

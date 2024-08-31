@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .d1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 100px;
+        }
+
+        .root{
+            width: 300px;
+            height: 300px;
+            background-color: #999;
+        }
+
+        .d2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="d1" class="d1"></div>
+
+<div class="root" id="root">
+    <div class="d2" id="d2"></div>
+</div>
+
+
+<script>
+    //mouseenter \ mouseleave 和 mouseover \ mouseout 的区别
+    //mouseenter \ mouseleave 不会冒泡 mouseover \ mouseout 会冒泡
+    //mouseenter \ mouseleave 只有在鼠标进入或离开元素时才会触发
+    // mouseover \ mouseout 在鼠标进入或离开元素时也会触发
+
+    let elementById = document.getElementById("d1");
+    elementById.onmouseover = function () {
+        elementById.style.backgroundColor = "green";
+    }
+    elementById.onmouseout = function () {
+        elementById.style.backgroundColor = "red";
+    }
+
+
+    // mouseover \ mouseout 在进入子元素时还会再触发一次
+    let root = document.getElementById("root");
+    let d2 = document.getElementById("d2");
+
+    root.onmouseover = function () {
+        console.log("进入父节点中和其中任何一个子节点都会触发");
+    }
+
+
+</script>
+
+</body>
+</html>

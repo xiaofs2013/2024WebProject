@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        .box1 {
+            height: 200px;
+            width: 200px;
+            border: 5px solid red; /* 边框 solid: 实线 */
+            padding: 10px; /* 内边距 */
+            margin: 20px; /* 外边距 */
+            background-color: green; /* 背景颜色 */
+        }
+
+        h3{
+            height: 500px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="box1" id="box1"></div>
+<h3>标题1</h3>
+<h3>标题2</h3>
+<h3>标题3</h3>
+<h3>标题4</h3>
+
+<script>
+
+    var box1 = document.getElementById("box1");
+    console.log(box1.clientWidth);  // 220 = 200 + 10*2 10为padding 上下 和 左右 各两个
+    console.log(box1.clientHeight);
+
+    //获取视口高度（屏幕高度）
+    console.log(document.documentElement.clientHeight);  // 703
+    //获取页面高度（内容有多大撑开的高度就有多大 没有内容的页面不算高度）
+    console.log(document.body.clientHeight); // 230
+
+
+    console.log("-----------------------------------------");
+
+
+    //获取滚动高度（整个页面的滚动高度）
+    console.log(document.documentElement.scrollTop);
+
+    console.log("-----------------------------------------");
+    //元素CSS的高度和宽度 包括padding和border 但不包括margin
+    console.log(box1.offsetHeight); //230 = 200 + 10*2 + 5*2 5为border
+    console.log(box1.offsetWidth);
+
+</script>
+
+</body>
+</html>

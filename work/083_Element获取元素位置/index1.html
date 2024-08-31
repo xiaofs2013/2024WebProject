@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        * {
+            margin: 0; /* 浏览器自带的外边距  8px */
+            padding: 0;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            margin: 100px; /* 外边距 */
+            background-color: red; /* 背景颜色 */
+        }
+
+        .root {
+            height: 500px;
+            width: 500px;
+            background-color: #999;
+            margin: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="box" id="box"></div>
+<div class="root"></div>
+
+<script>
+
+
+
+    //父元素 如果没有父元素则向上找到最近的有定位的父元素 比如文档流（整个页面）
+    //父元素必须要有定位属性（position）才能获取到
+    var box = document.getElementById("box");
+    //到定位父元素的左边界的距离
+    console.log(box.offsetLeft);
+    //到定位父元素的上边界的距离
+    console.log(box.offsetTop);
+
+
+
+
+
+    // 获取元素相对于其包含元素的偏移量：用于确定元素在其父容器中的位置。
+    // 拖拽功能：在实现拖拽功能时，可以用来计算元素的当前位置，从而更新元素的位置。
+    // 碰撞检测：在游戏开发或交互式应用中，用于检测元素之间的碰撞。
+    // 动态布局：在动态调整布局时，用于获取元素的位置以便进行相应的调整。
+    // 获取元素的左偏移量和上偏移量
+    var box = document.getElementById("box");
+    var leftOffset = box.offsetLeft;
+    var topOffset = box.offsetTop;
+
+    // 打印偏移量
+    console.log("Left Offset: " + leftOffset);
+    console.log("Top Offset: " + topOffset);
+
+    // 示例：实现一个简单的拖拽功能 event : mousedown mousemove mouseup
+    box.onmousedown = function (event) {
+        var shiftX = event.clientX - box.getBoundingClientRect().left;
+        var shiftY = event.clientY - box.getBoundingClientRect().top;
+
+        function moveAt(pageX, pageY) {
+            box.style.left = pageX - shiftX + 'px';
+            box.style.top = pageY - shiftY + 'px';
+        }
+
+        function onMouseMove(event) {
+            moveAt(event.pageX, event.pageY);
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        box.onmouseup = function () {
+            document.removeEventListener('mousemove', onMouseMove);
+            box.onmouseup = null;
+        };
+    };
+
+    box.ondragstart = function () {
+        return false;
+    };
+
+</script>
+</body>
+</html>

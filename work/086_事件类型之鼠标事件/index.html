@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        #btn5 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-top: 50px; /*外边距 垂直*/
+        }
+
+        #btn6 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin-top: 50px; /*外边距 垂直*/
+        }
+
+        #btn7 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-top: 50px; /*外边距 垂直*/
+        }
+
+    </style>
+
+</head>
+<body>
+
+<button id="btn1">单击</button>
+<button id="btn2">双击</button>
+<button id="btn3">按下</button>
+<button id="btn4">抬起</button>
+
+<div id="btn5" class="box1"></div>
+
+<div id="btn6" class="box2"></div>
+
+<div id="btn7" class="box3"></div>
+
+
+<script>
+    var btn1 = document.getElementById("btn1");
+
+    btn1.onclick = function () {
+        alert("单击事件")
+    }
+
+    document.getElementById("btn2").ondblclick = function () {
+        alert("双击事件")
+    }
+
+    document.getElementById("btn3").onmousedown = function () {
+        alert("按下事件")
+    }
+
+    document.getElementById("btn4").onmouseup = function () {
+        alert("抬起事件（松开鼠标按键后）")
+    }
+
+    document.getElementById("btn5").onmousemove = function () {
+       alert("鼠标移动事件");
+    }
+
+    document.getElementById("btn6").onmouseenter = function () {
+        alert("鼠标进入事件");
+    }
+
+    document.getElementById("btn7").onmouseleave = function () {
+        alert("鼠标离开事件");
+    }
+
+
+</script>
+</body>
+</html>

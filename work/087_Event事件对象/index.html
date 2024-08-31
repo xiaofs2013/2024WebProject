@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="b1">按钮</button>
+
+<a href="http://www.baidu.com" id="a1">百度</a>
+
+
+<script>
+    let b1 = document.getElementById("b1");
+
+    // Event事件对象 其实就是参数
+    b1.addEventListener("click", function (event) {
+        console.log(event);
+    });
+
+    //Event 常见属性对象
+    // 1. event.type 事件类型
+    // 2. event.target 事件目标
+
+    // event.target 返回当前事件当前所在节点
+    //理解为 点击谁 就 返回谁
+    b1.addEventListener("click", function (event) {
+        console.log(event.target);
+        event.target.innerHTML = "点击之后";  //innerHTML 用于获取或设置某个元素的HTML内容
+    });
+
+    b1.addEventListener("click", function (event) {
+        console.log(event.type); //打印click 代表当前是点击事件
+    });
+
+    // event常用的对象方法
+    // 1. event.preventDefault() 阻止默认行为
+    // 2. event.stopPropagation() 阻止冒泡
+
+
+    //event.preventDefault() 取消当前浏览器对事件的默认行为 比如：点击链接跳转页面 使用这个方法就不会跳转
+    let a1 = document.getElementById("a1");
+    a1.onclick = function (e) { //e 代表event
+        e.preventDefault();
+        alert("不跳转");
+    };
+
+
+</script>
+</body>
+</html>
