@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        h3 {
+            height: 400px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+
+<script>
+
+
+    // 节流也是一种优化策略，它能够确保在高频率触发的情况下，不会频繁执行函数。
+    // 节流：在一段时间内只执行一次函数，适用于限制函数执行频率的场景。
+    // 防抖：在一段时间后执行函数，如果在这段时间内函数被再次触发，则重新计时，适用于需要在事件停止后执行函数的场景。
+
+
+    //节流的应用场景有：
+    // 1. 搜索框input事件
+    // 2. 页面缩放场景下的resize事件
+
+    function therottle(fn, delay) {
+        let valid = true;
+        return function () {
+            if (!valid) {
+                return false; // 如果 valid 为 false，直接返回，不执行 fn
+            }
+            valid = false; // 将 valid 设置为 false，防止在 delay 时间内再次调用
+            setTimeout(function () {
+                fn(); // 延迟 delay 毫秒后执行 fn
+                valid = true; // 执行完 fn 后，将 valid 重新设置为 true
+            }, delay);
+        }
+    }
+
+
+    window.onscroll = therottle(scroll, 2000);
+
+    function scroll() {
+        const scrollTop = document.documentElement.scrollTop;
+        console.log(scrollTop);
+    }
+
+</script>
+
+
+</body>
+</html>

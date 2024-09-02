@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        h3 {
+            height: 400px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+
+<script>
+
+    //防抖是属于性能优化的一种
+
+    //滚动事件 （加括号是调用，不加括号是引用）
+    //如果加上括号 scroll()，会立即调用函数并将其返回值（通常是 undefined）赋给 onscroll，这不是预期的行为。
+    window.onscroll = debounce(scroll, 200);
+
+
+    function debounce(fn, delay) {
+        var timer = null;
+        return function () {   //闭包
+            if (timer != null) {
+                clearTimeout(timer)
+            }
+            timer = setTimeout(fn, delay);
+        }
+    }
+
+    function scroll() {
+        const scrollTop = document.documentElement.scrollTop;
+        console.log(scrollTop);
+    }
+
+
+    //防抖定义 ：
+    //在对于短时间连续触发的事件（如滚动事件），在规定时间内只触发一次，如果在规定时间内再次触发，则重新计时。
+    //防抖的含义就是让某个时间期限内，事件处理函数只执行一次
+    //场景 ： 滚动事件，输入框输入事件，窗口大小变化事件
+
+</script>
+
+
+</body>
+</html>

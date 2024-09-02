@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+
+    //var的作用域是函数作用域
+    if (true){
+        var i = 10;
+    }
+    console.log(i); //可以打印 因为var的作用域是函数作用域
+
+
+    //function的作用域是函数作用域
+    if (true){
+        function f() {
+            var str = 'hello';
+        }
+    }
+    // console.log(str); //报错 因为function的作用域是函数作用域
+
+
+    //let 的作用域是块级作用域
+    if (true){
+        let j = 10;
+    }
+    // console.log(j); //报错 因为let 的作用域是块级作用域
+
+
+    //for循环很适合用let
+    for (let k = 0; k < 10; k++){
+        console.log(k);
+    }
+
+    //let不存在变量提升
+    //let不允许在相同作用域内，重复声明同一个变量
+
+</script>
+
+</body>
+</html>

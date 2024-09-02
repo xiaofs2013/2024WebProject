@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+
+    // 1. 对象解构赋值
+    // 1.1 基本用法
+    let {foo, bar} = {foo: 'aaa', bar: 'bbb'};
+    console.log(foo); // aaa
+    console.log(bar); // bbb
+
+    // 1.2 对象解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量
+    let {baz} = {foo: 'aaa', bar: 'bbb'};
+    console.log(baz); // undefined
+
+
+    // 2. 对象解构赋值给log方法
+    const {log} = console;
+    log('hello'); // hello
+
+
+</script>
+
+
+</body>
+</html>
