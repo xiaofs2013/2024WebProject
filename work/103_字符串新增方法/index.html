@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var allStr = "hello";
+
+    console.log(allStr.includes("h")); //查询字符串是否包含该字符  true
+    log(allStr.startsWith("h")); // 查询字符串是否以该字符开头  true
+    log(allStr.endsWith("o")); // 查询字符串是否以该字符结尾  true
+
+    //上述方法还能接受第二个参数，表示开始搜索的位置
+    log(allStr.includes("h", 1)); // false
+    log(allStr.startsWith("h", 1)); // false
+    log(allStr.endsWith("o", 1)); // false
+
+    //按数量拼接 重复字符串
+    log(allStr.repeat(2)); // hellohello
+    var str = "x";
+    log(str.repeat(3)); // xxx
+
+    //头部补全
+    log(allStr.padStart(10,"ab"));  // ababahello
+    //尾部补全
+    log(allStr.padEnd(10,"ab"));  // helloababa
+
+    //消除头部空格
+    var strOne = "  hello";
+    log(strOne.trimStart()); // hello
+
+    //消除尾部空格
+    var strTow = "hello  ";
+    log(strTow.trimEnd()); // hello
+
+    //at() 方法 返回指定位置的字符 从0开始 超出范围返回undefined 支持负索引
+    log(allStr.at(1)); // e
+    log(allStr.at(-1)); // o
+
+</script>
+
+</body>
+</html>
