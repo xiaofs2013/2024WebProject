@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var name = "iwen";
+    var user = {
+        name,  //属性的简洁表示法
+        age: 20,
+        // getName: function () {
+        //     console.log(this.name);
+        // }
+        getName() {
+            console.log(this.name);
+        }
+    };
+
+    console.log(user.name); // iwen
+    user.getName(); // iwen
+
+
+    let propKey = 'foo';
+    let obj = {
+        [propKey]: true, //属性名表达式
+        ['a' + 'bc']: 123
+    };
+    console.log(obj); // {foo: true, abc: 123}
+
+    function getPoint() {
+        var x = 10.23;
+        var y = 23.34;
+        return {x, y} //返回可以直接写对象
+    }
+
+    console.log(getPoint().x); // 10.23
+    console.log(getPoint().y); // 23.34
+
+
+    //属性名表达式
+    var obj = {};
+    var name = 'name';
+    obj[name] = 'iwen';
+    console.log(obj); // {name: "iwen"}
+
+
+
+
+</script>
+
+</body>
+</html>

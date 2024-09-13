@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="box">等待加载</div>
+
+<script>
+
+    //promise对象 用于异步编程
+    //promise对象有三种状态 pending(等待) resolved(成功) rejected(失败)
+    //promise对象的状态一旦改变就不会再变
+    //promise简单来说就是一个容器 里面保存着某个未来才会结束的事件的结果（网络请求或者异步操作 ）
+
+
+    //有了promise对象就可以将异步操作以同步操作的流程表达出来，避免了回调地狱（层层嵌套回调函数）
+
+    //基本用法
+    function loadImgeAsync(url) {
+        const promise = new Promise(function (resolve, reject) {
+            //写相关的逻辑代码
+            const image = new Image();  //创建一个图片对象
+            image.src = url; //设置图片的路径
+
+            image.onload = function () {  //图片加载成功
+                resolve(image); //return image
+            }
+            image.onerror = function () {  //图片加载失败
+                reject(new Error('Could not load image at ' + url));
+            }
+        })
+        return promise;
+    }
+
+    let box = document.getElementById("box");
+
+    let promise = loadImgeAsync("https://gd-hbimg.huaban.com/09160cecd4af5659819ce2222adda0d2b59b39167397-6JoPxk_fw1200");
+    promise.then(function (data) {
+        //成功后去掉div中等待加载的文字
+        box.innerHTML = "";
+        //向 box 中添加图片
+        box.appendChild(data);  //appendChild() 方法可向节点的子节点列表的末尾添加新的子节点。
+    }).catch(function (error) {
+        box.innerHTML = error;
+    })
+
+
+</script>
+
+</body>
+</html>

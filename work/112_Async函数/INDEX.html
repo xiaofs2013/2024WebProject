@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    //async 函数 可以将异步操作以同步的流程表达出来
+
+    function timeout1(ms) {
+        return new Promise((resolve, reject) => {
+            setTimeout(function () {
+                console.log('timeout1');
+                resolve();
+            }, ms);
+        });
+    }
+
+    async function asyncPrint(value, ms) {
+        //把具有异步操作的前面加入async关键字：await
+        await timeout1(ms); //等待timeout1执行完毕
+        console.log(value);
+    }
+
+    asyncPrint('hello world', 2000);
+
+
+</script>
+
+</body>
+</html>

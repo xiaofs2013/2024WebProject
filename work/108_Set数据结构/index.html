@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    //普通数组
+    var arr = [1, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 9, 0, 0, 0, 0];
+    //Set数据结构
+    var s = new Set(arr);
+    console.log(s); // Set(10) {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
+
+    //set 字符串去重
+    var str = 'heeeeeeellllllllo';
+    //中括号是为了将set转换为数组 从而使用join方法
+    console.log([...new Set(str)].join("")); // h e l o
+
+
+</script>
+
+</body>
+</html>

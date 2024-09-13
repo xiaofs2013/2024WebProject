@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+<h3>哈哈</h3>
+
+<script>
+
+
+    //类数组对象，只能使用数组的读取方式和length属性，不能使用数组的方法
+    function add() {
+        console.log(arguments); // Arguments(4)
+        console.log(arguments[0]); // 10
+        console.log(Array.from(arguments)); // Array.from() 方法从一个类似数组或可迭代对象创建一个新的数组实例
+        //使用Array.from()方法将类数组对象转换为真正的数组
+    }
+
+    add(10, 20, 30, 40);
+
+
+    let hList = document.getElementsByTagName('h3');
+    console.log(hList); // HTMLCollection(3) [h3, h3, h3]
+    console.log(Array.from(hList)); // Array(3) [h3, h3, h3]
+    //元素集合
+    let hArr = document.querySelectorAll('h3');
+    console.log(hArr); // NodeList(3) [h3, h3, h3]
+    console.log(Array.from(hArr)); // Array(3) [h3, h3, h3]
+
+
+    //Array.of 方法用于将一组值转换为数组
+    console.log(Array.of(10, 20, 30)); // [1, 2, 3]
+
+
+    Array(3); // [empty × 3] // 创建一个长度为3的空数组
+
+</script>
+
+</body>
+</html>

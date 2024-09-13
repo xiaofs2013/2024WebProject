@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<SCRIPT>
+
+    class Person {
+        //构造函数
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        //原型方法
+        getName() {
+            console.log(this.name);
+        }
+    }
+
+    //New对象和传参
+    var p = new Person('iwen', 20);
+    //调用方法
+    p.getName();
+
+</SCRIPT>
+
+</body>
+</html>
